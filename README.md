@@ -1,25 +1,25 @@
-# Kalkulator Wydatkow
+# Kalkulator Wydatków
 
-Prosta aplikacja konsolowa w C# do sledzenia wydatkow domowych.
+Prosta aplikacja konsolowa w C# do śledzenia wydatków domowych.
 
 ## Opis aplikacji
 
-Aplikacja pozwala uzytkownikowi zapisywac swoje wydatki z opisem, kwota, kategoria i data.
-Wszystkie dane sa automatycznie zapisywane do pliku CSV, dzieki czemu nie gina po zamknieciu
-programu i sa dostepne po ponownym uruchomieniu.
+Aplikacja pozwala użytkownikowi zapisywać swoje wydatki z opisem, kwotą, kategorią i datą.
+Wszystkie dane są automatycznie zapisywane do pliku CSV, dzięki czemu nie znikają po zamknięciu
+programu i są dostępne po ponownym uruchomieniu.
 
 ## Funkcje
 
 - Dodawanie wydatku (opis, kwota, kategoria, data)
-- Wyswietlanie wszystkich wydatkow w formie tabeli
-- Filtrowanie wydatkow wedlug wybranej kategorii
-- Filtrowanie wydatkow wedlug miesiaca i roku
-- Podsumowanie wydatkow pogrupowane wedlug kategorii, z suma calkowita
+- Wyświetlanie wszystkich wydatków w formie tabeli
+- Filtrowanie wydatków według wybranej kategorii
+- Filtrowanie wydatków według miesiąca i roku
+- Podsumowanie wydatków pogrupowane według kategorii, z sumą całkowitą
 - Usuwanie wydatku po numerze ID
-- Walidacja danych wprowadzanych przez uzytkownika (np. kwota musi byc liczba wieksza od zera)
+- Walidacja danych wprowadzanych przez użytkownika (np. kwota musi być liczbą większą od zera)
 - Automatyczny zapis i odczyt danych z pliku wydatki.csv
 
-## Kategorie wydatkow
+## Kategorie wydatków
 
 Jedzenie, Transport, Rozrywka, Zdrowie, Mieszkanie, Ubrania, Inne
 
@@ -39,12 +39,12 @@ dotnet run --project BudgetApp/BudgetApp.csproj
 
 ### Uruchomienie z Visual Studio
 
-Otworz plik BudgetApp.sln i nacisnij F5.
+Otwórz plik BudgetApp.sln i naciśnij F5.
 
 ### Dane
 
-Plik wydatki.csv jest tworzony automatycznie w katalogu, z ktorego uruchamiana jest aplikacja.
-Nie trzeba go tworzyc recznie.
+Plik wydatki.csv jest tworzony automatycznie w katalogu, z którego uruchamiana jest aplikacja.
+Nie trzeba go tworzyć ręcznie.
 
 ## Struktura projektu
 
@@ -53,16 +53,16 @@ BudgetApp/
 |-- BudgetApp.sln
 `-- BudgetApp/
     |-- BudgetApp.csproj
-    |-- Program.cs          - menu glowne i punkt wejscia do programu
+    |-- Program.cs          - menu główne i punkt wejścia do programu
     |-- Expense.cs           - klasa pojedynczego wydatku + enum kategorii
     |-- BudgetManager.cs     - logika aplikacji (dodawanie, filtrowanie, liczenie sum)
     |-- FileManager.cs       - zapis i odczyt danych z pliku CSV
-    `-- ConsoleHelper.cs     - metody pomocnicze do komunikacji z uzytkownikiem
+    `-- Display.cs     - metody pomocnicze do komunikacji z użytkownikiem
 \`\`\`
 
 ## Elementy dodatkowe
 
-- [x] **OOP** - wlasne klasy (Expense, BudgetManager, FileManager, ConsoleHelper),
-  enum, wlasciwosci, podzial odpowiedzialnosci miedzy klasami
+- [x] **OOP** - własne klasy (Expense, BudgetManager, FileManager, Display),
+  enum, właściwości, podział odpowiedzialności między klasami
 - [x] **IO** - zapis i odczyt danych z pliku CSV (wydatki.csv)
 - [ ] **WPF** - nie zaimplementowano
