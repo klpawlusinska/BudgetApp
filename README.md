@@ -48,14 +48,14 @@ Nie trzeba go tworzyć ręcznie.
 
 ## Struktura projektu
 
-BudgetApp
-BudgetApp.sln
-BudgetApp.csproj
-Program.cs          - menu główne i punkt wejścia do programu
-Expense.cs           - klasa pojedynczego wydatku + enum kategorii
-BudgetManager.cs     - logika aplikacji (dodawanie, filtrowanie, liczenie sum)
-FileManager.cs       - zapis i odczyt danych z pliku CSV
-Display.cs     - metody pomocnicze do komunikacji z użytkownikiem
+- BudgetApp
+- BudgetApp.sln
+- BudgetApp.csproj
+- Program.cs          - menu główne i punkt wejścia do programu
+- Expense.cs           - klasa pojedynczego wydatku + enum kategorii
+- BudgetManager.cs     - logika aplikacji (dodawanie, filtrowanie, liczenie sum)
+- FileManager.cs       - zapis i odczyt danych z pliku CSV
+- Display.cs     - metody pomocnicze do komunikacji z użytkownikiem
 
 ## Elementy dodatkowe
 
