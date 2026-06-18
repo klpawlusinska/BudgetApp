@@ -1,23 +1,25 @@
-# Kalkulator Wydatków
+# Kalkulator Wydatkow
 
-Prosta aplikacja konsolowa w C# do śledzenia codziennych wydatków.
+Prosta aplikacja konsolowa w C# do sledzenia wydatkow domowych.
 
-## Opis
+## Opis aplikacji
 
-Aplikacja pozwala użytkownikowi zapisywać wydatki z opisem, kwotą, kategorią i datą.
-Dane są przechowywane w pliku CSV, dzięki czemu są dostępne po ponownym uruchomieniu programu.
+Aplikacja pozwala uzytkownikowi zapisywac swoje wydatki z opisem, kwota, kategoria i data.
+Wszystkie dane sa automatycznie zapisywane do pliku CSV, dzieki czemu nie gina po zamknieciu
+programu i sa dostepne po ponownym uruchomieniu.
 
 ## Funkcje
 
 - Dodawanie wydatku (opis, kwota, kategoria, data)
-- Wyświetlanie wszystkich wydatków
-- Filtrowanie wydatków według kategorii
-- Filtrowanie wydatków według miesiąca i roku
-- Podsumowanie wydatków według kategorii z sumą całkowitą
-- Usuwanie wydatku po ID
-- Automatyczny zapis i odczyt danych z pliku `wydatki.csv`
+- Wyswietlanie wszystkich wydatkow w formie tabeli
+- Filtrowanie wydatkow wedlug wybranej kategorii
+- Filtrowanie wydatkow wedlug miesiaca i roku
+- Podsumowanie wydatkow pogrupowane wedlug kategorii, z suma calkowita
+- Usuwanie wydatku po numerze ID
+- Walidacja danych wprowadzanych przez uzytkownika (np. kwota musi byc liczba wieksza od zera)
+- Automatyczny zapis i odczyt danych z pliku wydatki.csv
 
-## Kategorie
+## Kategorie wydatkow
 
 Jedzenie, Transport, Rozrywka, Zdrowie, Mieszkanie, Ubrania, Inne
 
@@ -25,41 +27,42 @@ Jedzenie, Transport, Rozrywka, Zdrowie, Mieszkanie, Ubrania, Inne
 
 ### Wymagania
 
-- .NET 8.0 SDK – pobierz z https://dotnet.microsoft.com/download
+- .NET 8.0 SDK (do pobrania ze strony: https://dotnet.microsoft.com/download)
 
-### Uruchomienie
+### Uruchomienie z linii komend
 
-```bash
-# Sklonuj repozytorium
+\`\`\`
 git clone <adres-repozytorium>
 cd BudgetApp
-
-# Uruchom aplikację
 dotnet run --project BudgetApp/BudgetApp.csproj
-```
+\`\`\`
 
-Lub otwórz plik `BudgetApp.sln` w Visual Studio i naciśnij F5.
+### Uruchomienie z Visual Studio
+
+Otworz plik BudgetApp.sln i nacisnij F5.
 
 ### Dane
 
-Plik `wydatki.csv` tworzony jest automatycznie w katalogu, z którego uruchamiasz aplikację.
+Plik wydatki.csv jest tworzony automatycznie w katalogu, z ktorego uruchamiana jest aplikacja.
+Nie trzeba go tworzyc recznie.
 
 ## Struktura projektu
 
-```
+\`\`\`
 BudgetApp/
-├── BudgetApp.sln
-└── BudgetApp/
-    ├── BudgetApp.csproj
-    ├── Program.cs          # Menu i punkt wejścia
-    ├── Expense.cs          # Klasa Expense + enum Category
-    ├── BudgetManager.cs    # Logika aplikacji (dodawanie, filtrowanie, sumy)
-    ├── FileManager.cs      # Zapis i odczyt CSV
-    └── ConsoleHelper.cs    # Statyczne metody pomocnicze do UI
-```
+|-- BudgetApp.sln
+`-- BudgetApp/
+    |-- BudgetApp.csproj
+    |-- Program.cs          - menu glowne i punkt wejscia do programu
+    |-- Expense.cs           - klasa pojedynczego wydatku + enum kategorii
+    |-- BudgetManager.cs     - logika aplikacji (dodawanie, filtrowanie, liczenie sum)
+    |-- FileManager.cs       - zapis i odczyt danych z pliku CSV
+    `-- ConsoleHelper.cs     - metody pomocnicze do komunikacji z uzytkownikiem
+\`\`\`
 
 ## Elementy dodatkowe
 
-- ✅ **OOP** – własne klasy (`Expense`, `BudgetManager`, `FileManager`, `ConsoleHelper`), enum, właściwości, podział odpowiedzialności
-- ✅ **IO** – zapis i odczyt danych z pliku `.csv`
-- ❌ WPF – nie zaimplementowano
+- [x] **OOP** - wlasne klasy (Expense, BudgetManager, FileManager, ConsoleHelper),
+  enum, wlasciwosci, podzial odpowiedzialnosci miedzy klasami
+- [x] **IO** - zapis i odczyt danych z pliku CSV (wydatki.csv)
+- [ ] **WPF** - nie zaimplementowano
